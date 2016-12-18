@@ -38,6 +38,9 @@ def get_movie_from_user():
 
     return new_movie
 
+# Create an instance of the database to store movies in
+database = Movies()
+
 # Run the main program
 while (True):
     # Greet user and display a the Main Menu
@@ -50,8 +53,8 @@ while (True):
     print("Main Menu\n\n")
     print("(0) Load sample movie database\n")
     print("(1) Add Movies")
-    print("(2) Remove Movie")
-    print("(3) Update Movies Page")
+    print("(2) Remove Movies")
+    print("(3) Generate HTML document")
     print("(4) Exit program\n")
 
     # Get user input
@@ -87,7 +90,7 @@ while (True):
                 break
 
     elif userInput == "3":
-        print("Updating movies page")
+        print("Generating HTML document")
         time.sleep(1)
         fresh_tomatoes.open_movies_page(database.get_movies())
     elif userInput == "4":
