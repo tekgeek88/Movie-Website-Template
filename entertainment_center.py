@@ -25,16 +25,17 @@ from sample_movies import SampleMovies
 def get_movie_from_user():
     """Prompts the user for movie details
 
-    Gets movie information like title, storyline, image url, and YouTube link in
-    order to create a movie object
+    Gets movie information like title, storyline, image url, and YouTube link
+    in order to create a movie object
 
     :return: A newly created movie object
     """
 
     new_movie = Movie(raw_input("Enter movie title: "),
-                            raw_input("Enter movie storyline: "),
-                            raw_input("Enter movie's poster image url: "),
-                            raw_input("Enter movie's trailer link from YouTube: "))
+                      raw_input("Enter movie storyline: "),
+                      raw_input("Enter movie's poster image url: "),
+                      raw_input("Enter movie's trailer"
+                                "link from YouTube: "))
 
     return new_movie
 
@@ -42,7 +43,7 @@ def get_movie_from_user():
 database = Movies()
 
 # Run the main program
-while (True):
+while True:
     # Greet user and display a the Main Menu
     print("\n\n\n********************************************")
     print("**                                        **")
@@ -84,7 +85,9 @@ while (True):
         time.sleep(1)
         has_another = False
         while True:
-            database.remove_movie(raw_input("Which movie title would you like to remove (Must be typed exacty!): "))
+            database.remove_movie(raw_input(
+                "Which movie title would you like"
+                "to remove (Must be typed exactly!): "))
             has_another = raw_input("Delete another movie? (y/n): ")
             if has_another != "y":
                 break
